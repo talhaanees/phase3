@@ -1,9 +1,9 @@
-require 'test_helper'
+require 'rails_helper'
 RSpec.configure do |c|
   c.include Contexts
 end
 
-class EmployeeTest < ActiveSupport::TestCase
+RSpec.describe Employee, type: :model do
   # Test relationships 
   it { should have_many(:assignments) }
   it { should have_many(:stores).through(:assignments) }
@@ -149,8 +149,8 @@ class EmployeeTest < ActiveSupport::TestCase
     
     # test the method 'over_18?'
     it "shows that over_18? boolean method works" do
-      expect(@ed.over_18?).to be_true
-      expect(@cindy.over_18?).to be_false
+      expect(@ed.over_18?).to be true
+      expect(@cindy.over_18?).to be false
     end
     
     # test the method 'age'
