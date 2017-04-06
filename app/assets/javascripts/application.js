@@ -12,8 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//=require bootstrap-sprockets
 //= require foundation.min
 //= require_tree .
+
 
 $(function() {
   $(document).foundation('topbar', 'reflow');

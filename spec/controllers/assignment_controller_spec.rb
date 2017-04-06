@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe EmployeesController, type: :controller do
+RSpec.describe AssignmentController, type: :controller do
 
   describe "GET #index" do
     it "returns http success" do

@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Employee Details</h1>
+
+<p>
+  <strong>Name:</strong>
+  <%= @employee.name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= number_to_phone(@employee.phone) %>
+</p>
+
+<p>
+  <strong>Date of Birth:</strong>
+  <%= @employee.date_of_birth.strftime("%m/%d/%y") %>
+</p>
+
+<p>
+  <strong>SSN:</strong>
+  <%= @employee.ssn %>
+</p>
+
+<p>
+  <strong>Role:</strong>
+  <%= @employee.role.capitalize %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <% if @employee.active %>
+  Yes
+  <% else %>
+  No
+  <% end %>
+</p>
+
+<p>
+  <strong>Assignment History</strong>
+  <% @assignments.each do |assignment| %>
+    <%= link_to "#{assignment.store.name}", assignment.store %> <br>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_employee_path(@employee) %> |
+<%= link_to 'Back', employees_index_path %>
